@@ -7,6 +7,7 @@
  * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
  */
 using System;
+using System.IO;
 
 namespace Persistencia01
 {
@@ -14,9 +15,22 @@ namespace Persistencia01
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			Console.WriteLine("seccion b");
 			
-			// TODO: Implement Functionality Here
+			////creando directorio
+			/// 
+			string rutaRaiz = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"DatosIUJO");
+			string rutaReportes = Path.Combine(rutaRaiz, "Reportes");
+			Console.WriteLine(rutaRaiz);
+			
+			Console.WriteLine(rutaReportes);
+			
+			if(!Directory.Exists(rutaReportes)){
+			   	///crear el directortio reportes 
+				Directory.CreateDirectory(rutaReportes);
+				Console.WriteLine("directorio creado correctamente");
+			   }
+			//// 
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
